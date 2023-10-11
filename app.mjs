@@ -1,5 +1,7 @@
 //Importación de módulos
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 
 //Creación de la instancia
 const app = express();
@@ -10,6 +12,6 @@ app.get("/", (req, res) => {
 });
 
 //Puerto a escuchar
-app.listen(3000, () => {
-  console.log(">>> Escuchando en el puerto 3000.");
+app.listen(process.env.SERVER_PORT, () => {
+  console.log(">>> Escuchando en el puerto " + process.env.SERVER_PORT + ".");
 });
