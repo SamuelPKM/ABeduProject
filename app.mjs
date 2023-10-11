@@ -1,17 +1,23 @@
-//Importación de módulos
+// Importación de módulos
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 
-//Creación de la instancia
+// Creación de la instancia
 const app = express();
 
-//Declaración de rutas
+// Importación del router
+import articleRouter from "./modules/routers/article.mjs";
+
+// Declaración de rutas
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-//Puerto a escuchar
+// Uso del router
+app.use(articleRouter);
+
+// Puerto a escuchar
 app.listen(process.env.SERVER_PORT, () => {
   console.log(">>> Escuchando en el puerto " + process.env.SERVER_PORT + ".");
 });
