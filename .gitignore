@@ -1,2 +1,8 @@
 .vscode
 node_modules
+*.env
+=======
+.vscode
+node_modules/
+.env
+>>>>>>> 1eb2d03e8af27f1dbdd71be0e16acfcebb080f5f
