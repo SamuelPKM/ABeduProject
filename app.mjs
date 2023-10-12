@@ -10,16 +10,16 @@ const app = express();
 app.use(express.json());
 
 // Importación del router
-import articleRouter from "./modules/routers/article.mjs";
+import productRouter from "./modules/routers/product.mjs";
 import userRouter from "./modules/routers/user.mjs";
 import commentRouter from "./modules/routers/comment.mjs";
 
 // Uso del router
-app.use(articleRouter);
+app.use(productRouter);
 app.use(userRouter);
 app.use(commentRouter);
 
-// Declaración de rutas
+// Declaración de ruta por default en process.env.SERVER_PORT 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
